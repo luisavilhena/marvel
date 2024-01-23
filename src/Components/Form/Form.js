@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
 import "./Form.css"
 import search from "../../assets/busca/Lupa/Shape.png"
 import logo from "../../assets/logo/Group.png"
