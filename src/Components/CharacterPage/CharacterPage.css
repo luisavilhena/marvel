@@ -1,0 +1,89 @@
+.character-page {
+    background-color: #E7F6E7;
+}
+.character-page .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.character-page .name h2 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.character-page h4 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+.character-page .name  a{
+   display: block;
+   cursor: pointer;
+}
+.character-page .name  a img{
+    height: 27px;
+ }
+.character-page .infos .infos__comic-movies {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.character-page .infos .infos__comic-movies > div {
+    margin-right: 100px;
+}
+.character-page__columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.character-page__columns > div:first-of-type{
+    width: 30%;
+    min-width: 350px;
+    padding-right: 20px;
+}
+.character-page__columns > div:nth-of-type(2){
+    /* width: 70%; */
+}
+.character-page__columns > div > img {
+    max-width: 600px;
+}
+.raiting {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 30px;
+}
+.character-page .raiting h4 {
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-top: 6px;
+}
+.comic-movies {
+    display: flex;
+    align-items: start;
+
+}
+.comic-movies p {
+    color: #404040;
+}
+.comic-movies img {
+    margin-right: 10px;
+}
+.last-comic {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 0s;
+    font-weight: 400;
+    color: #8c8c8c;
+    margin-bottom: 20px;
+}
+.last-comic h4 {
+    color:#404040;
+    margin: 0 10px 0 0;
+}

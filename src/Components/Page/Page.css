@@ -1,0 +1,43 @@
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+h2 {
+    color:#404040;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+h3 {
+    color:#404040;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+p {
+    color:#8c8c8c;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 25px;
+}
+.page {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.page .disable-destak .content-result__destak {
+    display: none;
+}
+.page-structure {
+    max-width: 1200px;
+    padding: 20px;
+}
+.page-structure p > span {
+    font-weight: bold;
+}
+.page .page-add-loading ul li a,
+.page .page-add-loading ul li p,
+.page .page-add-loading ul li h3{
+    /* background-color: gray;
+    color: transparent; */
+}
