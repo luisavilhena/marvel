@@ -5,7 +5,7 @@ import axios from 'axios';
 import md5 from 'md5';
 import CharacterList from '../CharacterList/CharacterList';
 import CharacterPage from '../CharacterPage/CharacterPage';
-import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
+// import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
 import "./Page.css";
 
 function Page() {
@@ -53,32 +53,32 @@ function Page() {
   };
 
 
-    const ANIMALS = ["bear", "bird", "cat", "cetacean", "cow", "crocodilia", "dog",
-        "fish", "horse", "insect", "lion", "rabbit", "rodent", "snake"];
+    // const ANIMALS = ["bear", "bird", "cat", "cetacean", "cow", "crocodilia", "dog",
+    //     "fish", "horse", "insect", "lion", "rabbit", "rodent", "snake"];
 
-    const getImage = () => faker.image.urlLoremFlickr({ category: "animal" });
-    const getUrl = () => faker.internet.url();
-    const getText = () => faker.lorem.lines({ min: 2, max: 4 });
-    const getType = () => faker.animal.type();
-    const getTitle = type => faker.animal[type]();
+    // const getImage = () => faker.image.urlLoremFlickr({ category: "animal" });
+    // const getUrl = () => faker.internet.url();
+    // const getText = () => faker.lorem.lines({ min: 2, max: 4 });
+    // const getType = () => faker.animal.type();
+    // const getTitle = type => faker.animal[type]();
 
-    var type = getType();
+    // var type = getType();
 
-    const DATA = (e) => {
-        if (e) {
-            type = e;
-        }
-        return ([
-            {
-                id: faker.number.bigInt(1000n),
-                title: getTitle(type),
-                text: getText(),
-                url: getUrl(),
-                img: getImage(),
-            },
-            //... (restante do seu código)
-        ]);
-    }
+    // const DATA = (e) => {
+    //     if (e) {
+    //         type = e;
+    //     }
+    //     return ([
+    //         {
+    //             id: faker.number.bigInt(1000n),
+    //             title: getTitle(type),
+    //             text: getText(),
+    //             url: getUrl(),
+    //             img: getImage(),
+    //         },
+    //         //... (restante do seu código)
+    //     ]);
+    // }
 
     const inputForm = async (enteredCharacter) => {
         try {
