@@ -1,6 +1,7 @@
 
 body {
     font-family: 'Work Sans', sans-serif;
+    position: relative;
 }
 h2 {
     color:#404040;
@@ -25,7 +26,6 @@ p {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0px 70px 80px 70px;
-    position: relative;
 }
 .page .disable-destak .content-result__destak {
     display: none;
