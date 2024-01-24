@@ -126,11 +126,11 @@ function CharacterPage({
         </div>
       </div>
       <h3>Últimos Lançamentos</h3>
-      <ul>
+      <ul className="comics-list">
       {lastLictComic.map((comic, index) => (
           <li key={index}>
-            <img alt={comic.name} />
-            {comic.name}
+            <img />
+            <h3>{comic.name}</h3>
           </li>
         ))}
       </ul>

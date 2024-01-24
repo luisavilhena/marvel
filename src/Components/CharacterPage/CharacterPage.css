@@ -41,6 +41,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 .character-page__columns > div:first-of-type{
     width: 30%;
@@ -52,6 +53,7 @@
 }
 .character-page__columns > div > img {
     max-width: 600px;
+    width: 100%;
 }
 .raiting {
     display: flex;
@@ -87,4 +89,18 @@
 .last-comic h4 {
     color:#404040;
     margin: 0 10px 0 0;
+}
+.character-page .comics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+}
+.character-page .comics-list li {
+    margin: 15px;
+    padding: 0;
+    width: 150px;
 }
