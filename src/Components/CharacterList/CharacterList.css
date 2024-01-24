@@ -1,21 +1,27 @@
 .character-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
 }
 .character-list li {
     margin: 10px;
-    width: 20%;
+    width: 19%;
+    min-width: 250px;
+    max-height: 250px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    border-bottom: 5px solid #FF1510;
 }
 .character-list li .character-list__img {
-    margin-bottom: 10px;
-    border-bottom: 5px solid #FF1510;
     max-height: 250px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.character-list li .character-list__img:hover {
+    transform: scale(1.2);
 }
 .character-list div {
     display: flex;
@@ -46,6 +52,8 @@
 .character-header .character-header__menu {
     display: flex;
     align-items: center;
+    color: #ff1510;
+    font-weight: 300;
 }
 .character-header .character-header__menu  div,
 .character-header .character-header__menu  a{
@@ -60,4 +68,8 @@
     transition: background-color 0.3s ease;
     width: 75px;
     margin-left: 30px;
+}
+
+.menu-favoritos {
+    cursor: pointer;
 }

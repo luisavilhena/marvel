@@ -1,5 +1,6 @@
 .character-page {
     background-color: #E7F6E7;
+    height: 100%;
 }
 .character-page .name {
     display: flex;

@@ -7,18 +7,20 @@ export const useFavoriteCharacters = () => {
   return useContext(FavoriteCharactersContext);
 };
 
+
+let dadosNoLocalStorage = window.localStorage.getItem("marvel-data");
+
 const initialState = {
-  favoriteCharacters: [],
+  favoriteCharacters: dadosNoLocalStorage ? JSON.parse(dadosNoLocalStorage) : [],
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
       case 'ADD_TO_FAVORITES':
+        window.localStorage.setItem("marvel-data", JSON.stringify(action.payload));
         return {
           ...state,
-          favoriteCharacters: Array.isArray(action.payload)
-            ? [...state.favoriteCharacters, ...action.payload]
-            : [...state.favoriteCharacters, action.payload],
+          favoriteCharacters: action.payload
         };
       // Adicione outros casos conforme necessário
       default:
@@ -28,13 +30,21 @@ const reducer = (state, action) => {
 export const FavoriteCharactersProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
   
-    const addToFavorites = (characters) => {
-      const uniqueCharacters = characters.filter((character) => {
-        console.log('o personagem está na lista')
-        return !state.favoriteCharacters.some((favCharacter) => favCharacter.id === character.id);
-      });
+    const addToFavorites = (character) => {
+
+      const hasCharacter = state.favoriteCharacters.find((char) => char.name === character.name)
+      let newFavorites = [...state.favoriteCharacters]
+
+      if(hasCharacter) {
+        let index = newFavorites.indexOf(hasCharacter)
+        newFavorites.splice(index, 1)
+      } else if(state.favoriteCharacters.length < 5) {
+        newFavorites = [...state.favoriteCharacters, character]
+      } else {
+        window.alert("Máximo de 5 favoritos")
+      }
   
-      dispatch({ type: 'ADD_TO_FAVORITES', payload: uniqueCharacters });
+      dispatch({ type: 'ADD_TO_FAVORITES', payload: newFavorites });
     };
   
     return (

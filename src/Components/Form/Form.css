@@ -1,3 +1,6 @@
+.logo {
+    cursor: pointer;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -40,39 +43,43 @@ input:focus-visible {
 }
 .midle-search,
 .header-search {
-    margin-bottom: 80px;
+    padding: 30px 70px 80px 70px;
 }
-.midle-search > div {
+.header-search .structure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.midle-search .structure > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.midle-search > div > img {
+.midle-search .structure > div > img {
     width: 270px;
     margin-bottom: 30px;
 }
-.midle-search > div > h2 {
+.midle-search .structure > div > h2 {
     letter-spacing: 1.5px;
     display: block;
 }
-.midle-search > div > p {
+.midle-search .structure > div > p {
     display: block;
 }
 .header-search {
+    background-color: #E7F6E7;;
     display: flex;
     align-items: center;
-    padding: 20px 60px;
-    margin-bottom: 70px;
 }
-.header-search > div > img {
+.header-search .structure > div > img {
     width: 200px;
 }
-.header-search > div > h2,
-.header-search > div > p {
+.header-search .structure > div > h2,
+.header-search .structure > div > p {
     display: none;
 }
-.header-search div {
+.header-search .structure div {
     margin-left: 30px;
 }
 .header-search form {

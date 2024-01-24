@@ -21,17 +21,16 @@ p {
     font-size: 16px;
     line-height: 25px;
 }
-.page {
+.structure {
     max-width: 1300px;
     margin: 0 auto;
+    padding: 0px 70px 80px 70px;
+    position: relative;
 }
 .page .disable-destak .content-result__destak {
     display: none;
 }
-.page-structure {
-    max-width: 1200px;
-    padding: 20px;
-}
+
 .page-structure p > span {
     font-weight: bold;
 }
@@ -41,3 +40,4 @@ p {
     /* background-color: gray;
     color: transparent; */
 }
+
