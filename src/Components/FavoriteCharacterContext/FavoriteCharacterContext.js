@@ -22,7 +22,6 @@ const reducer = (state, action) => {
           ...state,
           favoriteCharacters: action.payload
         };
-      // Adicione outros casos conforme necessário
       default:
         return state;
     }

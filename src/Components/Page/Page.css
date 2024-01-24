@@ -34,15 +34,15 @@ p {
 .page-structure p > span {
     font-weight: bold;
 }
+
+footer {
+    background-color: #FF1510;
+    width: 100%;
+    height: 100px;
+}
 @media (max-width: 500px) {
     .structure {
         padding: 10px 20px 50px 20px;
     }
-}
-.page .page-add-loading ul li a,
-.page .page-add-loading ul li p,
-.page .page-add-loading ul li h3{
-    /* background-color: gray;
-    color: transparent; */
 }
 

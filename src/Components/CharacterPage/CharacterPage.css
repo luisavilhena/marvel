@@ -1,6 +1,6 @@
 .character-page {
     background-color: #E7F6E7;
-    height: 100%;
+    min-height: 100vh;
 }
 .character-page .name {
     display: flex;

@@ -18,35 +18,19 @@ function CharacterPage({
   description,
   comicsCount,
   moviesCount,
-  lastTenComics,
 
 }) {
-  const apiKey = 'ab003d2725d2c2fa3f4fe5423ff2df22';
-  const privateKey = '9c164aaa05226aa7297f401a298db0c93f4aef98';
+  const apiKey = 'ca5f659c7743cf10d62ffe20bd3b3f4b';
+  const privateKey = 'd476fbefbedc0c8c15ef716a579dc38e5df27ae9';
   const time = Number(new Date());
   const hash = md5(`${time}${privateKey}${apiKey}`);
-
+  
   const [comicDetails, setComicDetails] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [releases, setReleases] = useState([])
   const lastLictComic = character.comics.items
   ///adidiconar as últimas 10 histórias com nome e imagem de cada personagem
-  // useEffect(() => {
-  //       console.log(character.id, 'iddd')
-  //       const responseList = axios.get(`https://gateway.marvel.com/v1/public/comics/${character.id}?ts=${time}&apikey=${apiKey}&hash=${hash}`);
-  //       console.log('newcomicList',responseList.comics)
-  //       return responseList.data; // Ajuste conforme a estrutura real da resposta  
 
-  // }, [apiKey, time, hash]);
-
-  useEffect(() => {
-    // Simular uma operação assíncrona
-    const fetchData = async () => {
-      await new Promise(resolve => setTimeout(resolve, 8000));
-      setLoading(false);
-    };
-
-    fetchData();
-  }, []);
   const {
     state: { favoriteCharacters },
     addToFavorites,
@@ -63,6 +47,23 @@ function CharacterPage({
   };
 
   let lastComicDate = null;
+
+  useEffect(() => {
+    let releaseList = []
+    character.comics.items.map(async (comic, index) => {
+      if (index > 9) return;
+      const response = await axios.get(
+        `${comic.resourceURI}?&apikey=${apiKey}&hash=${hash}&ts=${time}`
+      );
+      if(response.statusText === 'OK') {
+        releaseList.push({
+          name: response.data.data.results[0].title,
+          thumbnail: response.data.data.results[0].thumbnail.path + '/portrait_medium.' + response.data.data.results[0].thumbnail.extension
+        })
+        setReleases([...releaseList])
+      }
+    })
+  }, [])
 
   // if (lastTenComics.length > 0) {
   //   const firstComic = lastTenComics[0];
@@ -122,14 +123,14 @@ function CharacterPage({
           </div>
         </div>
         <div>
-          <img src={url} alt={name} />
+          <img src={url} alt={name} onLoad={()=>{ setLoading(false) }} />
         </div>
       </div>
       <h3>Últimos Lançamentos</h3>
       <ul className="comics-list">
-      {lastLictComic.map((comic, index) => (
+      {releases.map((comic, index) => (
           <li key={index}>
-            <img />
+            <img src={comic.thumbnail} alt={comic.name} />
             <h3>{comic.name}</h3>
           </li>
         ))}

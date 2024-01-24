@@ -8,6 +8,10 @@ form {
 }
 form div {
     position: relative;
+    max-width: 810px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 form div img {
     position: absolute;
@@ -20,7 +24,7 @@ form button {
     display: none;
 }
 input {
-    max-width: 400px;
+    max-width: 810px;
     width: 100%;
     height: 30px;
     border-radius: 30px;

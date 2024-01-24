@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
+    min-height: 100vh;
 }
 .character-list li {
     margin: 15px;

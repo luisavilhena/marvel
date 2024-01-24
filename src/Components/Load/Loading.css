@@ -1,6 +1,7 @@
 .loading-container {
     position: absolute;
     top: 0;
+    min-height: 100vh;
     height: 100%;
     right: 0;
     left: 0;
